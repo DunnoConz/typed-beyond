@@ -95,18 +95,20 @@ function onPlayerAdded(player: Player) {
 		}
 	}
 
-	if (!playerProfile?.Data.SlotData.get(1)) {
+	const slot = 1; // temp
+
+	if (!playerProfile?.Data.SlotData.get(slot)) {
 		// might not work because not using profile service methods but see if auto update corrosponds with map
-		playerProfile?.Data.SlotData.set(1, { NewCharacter: true, CharacterCount: 1, LifeCount: 3 });
+		playerProfile?.Data.SlotData.set(slot, { NewCharacter: true, CharacterCount: 1, LifeCount: 3 });
 	}
 
 	print(playerProfile);
 
-	if (playerProfile?.Data.SlotData.get(1)?.NewCharacter) {
+	if (playerProfile?.Data.SlotData.get(slot)?.NewCharacter) {
 		print("NOT FINISHED WITH CHARACTER CREATION!");
 		// teleport to menu to create character ( USE TELEPORT DATA FOR SLOT ) -- ONLY CREATE CHARACTER DATA INSIDE OF MAIN SCREEN PLACE
 		// teleport will auto release
-		TeleportService.Teleport(12638597988, player); // create teleport data interface and pass through { CreateCharacter: boolean}
+		TeleportService.Teleport(12638597988, player, [true, slot]); // create teleport data { CreateCharacter: boolean, Slot: number }
 		return;
 	}
 
