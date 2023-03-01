@@ -55,6 +55,21 @@ export interface ICharacterData {
 	Inventory: Map<number, object>;
 }
 
+export interface ICharacterData2 {
+	Name: string;
+	Age: number; // tick
+	Credits: number;
+	Inventory: Map<number, object>;
+	BaseAppearance: {
+		Face: number;
+		RaceAccessory: number;
+	}; // handles skin color, hair, markings
+	Appearance: {
+		Outfit: number; // shirts and pants
+		Overwear: number; // jackets and stuff
+	};
+}
+
 export interface ISlotData {
 	CharacterCount: number;
 	LifeCount: number;
