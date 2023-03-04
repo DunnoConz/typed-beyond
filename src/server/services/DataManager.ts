@@ -108,7 +108,7 @@ function onPlayerAdded(player: Player) {
 		print("NOT FINISHED WITH CHARACTER CREATION!");
 		// teleport to menu to create character ( USE TELEPORT DATA FOR SLOT ) -- ONLY CREATE CHARACTER DATA INSIDE OF MAIN SCREEN PLACE
 		// teleport will auto release
-		TeleportService.Teleport(12638597988, player, [true, slot]); // create teleport data { CreateCharacter: boolean, Slot: number }
+		TeleportService.Teleport(12638746986, player, [true, slot]); // create teleport data { CreateCharacter: boolean, Slot: number }
 		return;
 	}
 
